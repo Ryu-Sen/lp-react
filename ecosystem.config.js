@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'lp-react8082',
       script: 'yarn',
-      args: 'serve -p $PORT -T ',
+      args: 'serve -s build -p $PORT -T ',
       env: {
         "PORT": 8082,
         "NODE_ENV": "development",
