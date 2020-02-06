@@ -24,15 +24,15 @@ class App extends React.PureComponent {
             defaultSelectedKeys={['1']}
             style={{ lineHeight: '64px' }}
           >
-            <Menu.Item key="1">
+            <Menu.Item className="App-menu-item" key="1">
               <span>Home</span>
               <Link to="/" />
             </Menu.Item>
-            <Menu.Item key="2">
+            <Menu.Item className="App-menu-item" key="2">
               <span>Articles</span>
               <Link to="/articles" />
             </Menu.Item>
-            <Menu.Item key="3">
+            <Menu.Item className="App-menu-item" key="3">
               <span>About</span>
               <Link to="/about" />
             </Menu.Item>
