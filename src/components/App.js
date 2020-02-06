@@ -1,8 +1,8 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import About from "./About/About";
-import Home from "./Home/Home";
+import About from "./About";
+import Home from "./Home";
 
 import "./App.css";
 
