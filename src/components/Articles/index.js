@@ -4,6 +4,6 @@ import "./Articles.css";
 
 export default class Articles extends React.PureComponent {
     render() {
-        return <h1>Articles page ! Hello</h1>;
+        return <h1>Articles page !</h1>;
     }
 }
