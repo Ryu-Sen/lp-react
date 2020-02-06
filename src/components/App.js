@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { Layout } from "antd";
 
 import About from "./About";
 import Home from "./Home";
@@ -8,6 +9,8 @@ import Article from "./Articles/Article";
 import NotFound from "./NotFound";
 
 import "./App.css";
+
+// const { Header } = Layout
 
 class App extends React.PureComponent {
   render() {
