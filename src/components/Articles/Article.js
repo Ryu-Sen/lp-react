@@ -1,14 +1,13 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 import "./Articles.css";
 
-export default class Article extends React.PureComponent {
-    render() {
-        console.log('props', this.props);
+const Article = () => {
+    const { id } = useParams()
+    console.log(id);
 
-        // const { params } = this.props.match
-        // console.log(params);
-
-        return <h1>Article ID: </h1>;
-    }
+    return <h1>Article ID: {id}</h1>;
 }
+
+export default Article

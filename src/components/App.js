@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import About from "./About";
 import Home from "./Home";
@@ -26,6 +26,9 @@ class App extends React.PureComponent {
           <Route path="/article/:id">
             <Article />
           </Route>
+
+          {/* Redirect if no param passed */}
+          <Redirect from="/article/" to="/articles" />
 
           {/* If none of the previous routes render anything,
               this route acts as a fallback.
