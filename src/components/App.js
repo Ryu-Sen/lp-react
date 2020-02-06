@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 
 import About from "./About";
 import Home from "./Home";
+import Articles from "./Articles";
+import Article from "./Articles/Article";
 
 import "./App.css";
 
@@ -15,6 +17,14 @@ class App extends React.PureComponent {
               while the rest are ignored */}
           <Route path="/about">
             <About />
+          </Route>
+
+          <Route path="/articles">
+            <Articles />
+          </Route>
+
+          <Route path="/article/:id">
+            <Article />
           </Route>
 
           {/* If none of the previous routes render anything,
