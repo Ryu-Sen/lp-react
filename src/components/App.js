@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Redirect, Link } from "react-router-dom";
+import { Switch, Route, Redirect, NavLink, withRouter } from "react-router-dom";
 import { Layout, Menu } from "antd";
 
 import About from "./About";
@@ -14,27 +14,27 @@ const { Header, Content } = Layout
 
 class App extends React.PureComponent {
   render() {
+
     return (
-      // <div className="App">
       <Layout style={{ minHeight: '100vh' }}>
         <Header style={{ background: '#fff', padding: 0 }} >
           <Menu
             theme="dark"
             mode="horizontal"
-            defaultSelectedKeys={['1']}
+            selectedKeys={[this.props.location.pathname]}
             style={{ lineHeight: '64px' }}
           >
-            <Menu.Item className="App-menu-item" key="1">
+            <Menu.Item className="App-menu-item" key="/">
               <span>Home</span>
-              <Link to="/" />
+              <NavLink to="/" />
             </Menu.Item>
-            <Menu.Item className="App-menu-item" key="2">
+            <Menu.Item className="App-menu-item" key="/articles">
               <span>Articles</span>
-              <Link to="/articles" />
+              <NavLink to="/articles" />
             </Menu.Item>
-            <Menu.Item className="App-menu-item" key="3">
+            <Menu.Item className="App-menu-item" key="/about">
               <span>About</span>
-              <Link to="/about" />
+              <NavLink to="/about" />
             </Menu.Item>
           </Menu>
         </Header>
@@ -70,9 +70,8 @@ class App extends React.PureComponent {
           </Switch>
         </Content>
       </Layout>
-      // </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
