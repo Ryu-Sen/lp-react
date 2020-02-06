@@ -5,6 +5,7 @@ import About from "./About";
 import Home from "./Home";
 import Articles from "./Articles";
 import Article from "./Articles/Article";
+import NotFound from "./NotFound";
 
 import "./App.css";
 
@@ -23,21 +24,21 @@ class App extends React.PureComponent {
             <Articles />
           </Route>
 
-          <Route path="/article/:id">
+          <Route path="/article/:iddayum">
             <Article />
           </Route>
 
           {/* Redirect if no param passed */}
           <Redirect from="/article/" to="/articles" />
 
-          {/* If none of the previous routes render anything,
-              this route acts as a fallback.
-  
-              Important: A route with path="/" will *always* match
-              the URL because all URLs begin with a /. So that's
-              why we put this one last of all */}
-          <Route path="/">
+          <Route exact path="/">
             <Home />
+          </Route>
+
+          {/* If none of the previous routes render anything,
+              this route acts as a fallback.*/}
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
       </div>
