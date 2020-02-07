@@ -5,6 +5,7 @@ import { Layout, Menu } from "antd";
 import About from "./About";
 import Home from "./Home";
 import Articles from "./Articles";
+import Currency from "../ryu/index"
 import Article from "./Articles/Article";
 import Thomas from "./Thomas";
 import Florin from "../f-page/index";
@@ -66,6 +67,10 @@ class App extends React.PureComponent {
 
             <Route path="/articles">
               <Articles />
+            </Route>
+
+            <Route path="/article/currency">
+              <Currency />
             </Route>
 
             <Route path="/article/:id">
