@@ -1,5 +1,6 @@
 import React from 'react';
 import { Zoom  } from 'react-slideshow-image';
+import DownArrowLink from "../down-arrow-link/down-arrow-link.component"
 import "./slider.styles.css" 
 
  
@@ -27,6 +28,7 @@ const Slideshow = () => {
             images.map((img, index) => <img key={index} style={{width: "100%"}} src={img} alt="properties" />)
           }
         </Zoom>
+        <DownArrowLink/>
       </div>
     )
 }
