@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route ,withRouter} from "react-router-dom";
 import Index from "../f-page/index"
 import "./App.css";
 

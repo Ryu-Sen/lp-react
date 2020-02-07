@@ -1,0 +1,11 @@
+#basic-navbar-nav{
+  justify-content: flex-end;
+}
+
+.logo-brand{
+  margin-left: 30px;
+}
+
+.nav-container{
+  margin-right:30px
+}
