@@ -5,6 +5,7 @@ import "./App.css";
 
 class App extends React.PureComponent {
   render() {
+
     return (
       <div className="App">
           <Switch>
@@ -17,4 +18,4 @@ class App extends React.PureComponent {
   }
 }
 
-export default App;
+export default withRouter(App);
