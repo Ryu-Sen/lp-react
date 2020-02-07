@@ -1,7 +1,7 @@
 .slide-container {
  width: 100%;
- overflow: hidden;
- max-height: 850px;
+ overflow:hidden;
+ max-height: 900px;
 }
 h3 {
   text-align: center; }
