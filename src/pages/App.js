@@ -7,6 +7,7 @@ import Home from "./Home";
 import Articles from "./Articles";
 import Article from "./Articles/Article";
 import Thomas from "./Thomas";
+import Florin from "../f-page/index";
 import NotFound from "./NotFound";
 
 import "./App.css";
@@ -40,6 +41,10 @@ class App extends React.PureComponent {
               <span>Thomas</span>
               <NavLink to="/thomas" />
             </Menu.Item>
+            <Menu.Item className="App-menu-item" key="/fpage">
+              <span>Florin</span>
+              <NavLink to="/fpage" />
+            </Menu.Item>
           </Menu>
         </Header>
 
@@ -62,6 +67,10 @@ class App extends React.PureComponent {
             {/* Redirect if no param passed */}
             <Redirect from="/article/" to="/articles" />
 
+            <Route path="/fpage">
+              <Florin />
+            </Route>
+
             <Route path="/thomas">
               <Thomas />
             </Route>
@@ -79,21 +88,6 @@ class App extends React.PureComponent {
         </Content>
       </Layout>
     );
-    // return (
-    //   <Switch>
-    //     <Route path="/thomas">
-    //       <Thomas />
-    //     </Route>
-
-    //     <Redirect from="/" to="/thomas" />
-
-    //     {/* If none of the previous routes render anything,
-    //           this route acts as a fallback.*/}
-    //     <Route path="*">
-    //       <NotFound />
-    //     </Route>
-    //   </Switch>
-    // );
   }
 }
 
