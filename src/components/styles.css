@@ -41,4 +41,9 @@
   flex: 1;
   text-align: center;
   background: #364d79;
+  position: relative;
+}
+
+.carousel-img {
+  height: 500px;
 }

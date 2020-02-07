@@ -11,9 +11,10 @@ const ListCarousel = () => {
       {images.map((image, i) => (
         <img
           key={i}
-          src={require(`../assets/listimages/${image}.jpg`)}
+          src={require(`../assets/listimages/${image}_edited.jpg`)}
           alt={`${i + 1}`}
           title={`${i + 1}`}
+          className="carousel-img"
         />
       ))}
     </Carousel>
