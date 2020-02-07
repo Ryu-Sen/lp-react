@@ -1,5 +1,7 @@
 .Thomas {
-  display: flex;
-  text-align: center;
-  background-color: rgb(78, 72, 63);
+  position: relative;
+}
+
+.content {
+  flex: 1 0 auto;
 }
