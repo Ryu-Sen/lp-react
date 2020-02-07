@@ -1,5 +1,5 @@
 import React from "react";
-import Slider from "./components/Slider/slider.component"
+import Header from "./components/header/header.component"
 import Navbar from "./components/navbar/navbar.component"
 
 class Index extends React.PureComponent {
@@ -7,8 +7,7 @@ class Index extends React.PureComponent {
     return (
        <div>
           <Navbar/>
-          <Slider/>
-          <h1>Hello</h1>
+          <Header/>
        </div>
     );
   }
