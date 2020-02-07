@@ -15,12 +15,11 @@ import "./App.css";
 const { Header, Content } = Layout;
 
 class App extends React.PureComponent {
-  disableHeader = () => {
-    return !(
+  disableHeader = () =>
+    !(
       this.props.location.pathname === "/thomas" ||
       this.props.location.pathname === "/fpage"
     );
-  };
 
   render() {
     return (
