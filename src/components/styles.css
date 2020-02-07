@@ -40,6 +40,7 @@
 .carousel {
   flex: 1;
   text-align: center;
-  background: #364d79;
   position: relative;
+  -webkit-mask-image: linear-gradient(to top, transparent 1%, #f0f2f5 99%);
+  mask-image: linear-gradient(to top, transparent 1%, #f0f2f5 99%);
 }

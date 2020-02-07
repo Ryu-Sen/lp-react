@@ -26,6 +26,7 @@ const Thomas = () => {
             alt="map"
             className="map-img"
           />
+          <div className="masked"></div>
         </div>
         <img
           src={require("../../assets/transition_image.jpg")}

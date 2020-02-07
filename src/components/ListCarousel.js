@@ -7,7 +7,7 @@ const images = ["image_one", "image_two", "image_three", "image_four"];
 
 const ListCarousel = () => {
   return (
-    <Carousel autoplay className="carousel">
+    <Carousel dotPosition="top" autoplay arrows className="carousel">
       {images.map((image, i) => (
         <img
           key={i}

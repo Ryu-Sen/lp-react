@@ -16,9 +16,18 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+/* .masked {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background: #f0f2f5;
+  -webkit-mask-image: url(../../assets/mask_image.jpg);
+  mask-image: url(../../assets/mask_image.jpg);
+} */
+
 .transition-img {
   width: 100%;
   height: auto;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 10%, #f0f2f5 90%);
-  mask-image: linear-gradient(to bottom, transparent 10%, #f0f2f5 90%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 1%, #f0f2f5 99%);
+  mask-image: linear-gradient(to bottom, transparent 1%, #f0f2f5 99%);
 }
