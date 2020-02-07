@@ -15,38 +15,47 @@ import "./App.css";
 const { Header, Content } = Layout;
 
 class App extends React.PureComponent {
+  disableHeader = () => {
+    return !(
+      this.props.location.pathname === "/thomas" ||
+      this.props.location.pathname === "/fpage"
+    );
+  };
+
   render() {
     return (
       <Layout style={{ minHeight: "100vh" }}>
-        <Header style={{ background: "#fff", padding: 0 }}>
-          <Menu
-            theme="dark"
-            mode="horizontal"
-            selectedKeys={[this.props.location.pathname]}
-            style={{ lineHeight: "64px" }}
-          >
-            <Menu.Item className="App-menu-item" key="/">
-              <span>Home</span>
-              <NavLink to="/" />
-            </Menu.Item>
-            <Menu.Item className="App-menu-item" key="/articles">
-              <span>Articles</span>
-              <NavLink to="/articles" />
-            </Menu.Item>
-            <Menu.Item className="App-menu-item" key="/about">
-              <span>About</span>
-              <NavLink to="/about" />
-            </Menu.Item>
-            <Menu.Item className="App-menu-item" key="/thomas">
-              <span>Thomas</span>
-              <NavLink to="/thomas" />
-            </Menu.Item>
-            <Menu.Item className="App-menu-item" key="/fpage">
-              <span>Florin</span>
-              <NavLink to="/fpage" />
-            </Menu.Item>
-          </Menu>
-        </Header>
+        {this.disableHeader() && (
+          <Header style={{ background: "#fff", padding: 0 }}>
+            <Menu
+              theme="dark"
+              mode="horizontal"
+              selectedKeys={[this.props.location.pathname]}
+              style={{ lineHeight: "64px" }}
+            >
+              <Menu.Item className="App-menu-item" key="/">
+                <span>Home</span>
+                <NavLink to="/" />
+              </Menu.Item>
+              <Menu.Item className="App-menu-item" key="/articles">
+                <span>Articles</span>
+                <NavLink to="/articles" />
+              </Menu.Item>
+              <Menu.Item className="App-menu-item" key="/about">
+                <span>About</span>
+                <NavLink to="/about" />
+              </Menu.Item>
+              <Menu.Item className="App-menu-item" key="/thomas">
+                <span>Thomas</span>
+                <NavLink to="/thomas" />
+              </Menu.Item>
+              <Menu.Item className="App-menu-item" key="/fpage">
+                <span>Florin</span>
+                <NavLink to="/fpage" />
+              </Menu.Item>
+            </Menu>
+          </Header>
+        )}
 
         <Content className="App">
           <Switch>
