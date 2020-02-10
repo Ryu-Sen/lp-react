@@ -6,9 +6,10 @@ class Chart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toCurrency: "JPY",
-      fromCurrency: "PHP",
+      toCurrency: this.props.toCurrency,
+      fromCurrency: this.props.fromCurrency,
       latestDate: "",
+      prevDate: "",
       historicalDates: [],
       historicalValues: [],
       latestValues: [],
@@ -25,18 +26,21 @@ class Chart extends Component {
   };
 
   componentDidMount() {
-    this.getHistoryData();
     this.getLatestData();
+    this.setState({
+      prevDate: this.getPrevDate(this.state.latestDate)
+    })
+    this.getHistoryData();
   }
 
-  UNSAFE_componentWillReceiveProps() { //this freaking thing...
-    if (this.state.fromCurrency !== this.props.fromCurrency) {
+  componentDidUpdate(prevProps) { //this freaking thing...
+    if (prevProps.fromCurrency !== this.props.fromCurrency) {
       this.setState({
         fromCurrency: this.props.fromCurrency
       })
       this.getHistoryData();
       this.getLatestData();
-    }if(this.state.toCurrency !== this.props.toCurrency){
+    } if (prevProps.toCurrency !== this.props.toCurrency) {
       this.setState({
         toCurrency: this.props.toCurrency
       })
@@ -44,10 +48,18 @@ class Chart extends Component {
     }
   }
 
+  getPrevDate = (date) => {
+    let yearStr = date.slice(0, 4)
+    let year = parseInt(yearStr)
+    year--
+    let oldDate = date.replace(yearStr, year.toString())
+    console.log(oldDate + ' to ' + date);
+  }
+
   getHistoryData() {
     axios
       .get(
-        `https://api.exchangeratesapi.io/history?start_at=2018-01-01&end_at=2018-03-01&base=${this.state.toCurrency}&symbols=${this.state.fromCurrency}`
+        `https://api.exchangeratesapi.io/history?start_at=2018-01-01&end_at=${this.state.latestDate}&base=${this.state.toCurrency}&symbols=${this.state.fromCurrency}`
       )
       .then(response => {
         const dates = [];
@@ -66,7 +78,7 @@ class Chart extends Component {
   setHistoricalData() {
     this.setState({
       historyData: {
-        labels: this.props.historicalDates,
+        labels: this.state.historicalDates,
         datasets: [
           {
             label: "Value",

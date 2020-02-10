@@ -7,8 +7,19 @@ class Converter extends React.Component {
     super(props);
     this.state = {
       result: null,
-      amount: 100
+      amount: 100,
+      toCurrency: props.toCurrency,
+      fromCurrency: props.fromCurrency,
     };
+  }
+
+  componentDidUpdate(prevProps){
+    if(prevProps.fromCurrency !== this.state.fromCurrency){
+      this.setState({fromCurrency: this.props.fromCurrency})
+    }
+    if(prevProps.toCurrency !== this.state.toCurrency){
+      this.setState({toCurrency: this.props.toCurrency})
+    }
   }
 
   /**
@@ -46,10 +57,10 @@ class Converter extends React.Component {
    * Drop-down changes update
    */
   selectHandler = event => {
-    if (event.target.name === "from") {
+    if (event.target.name === "from" && event.target.value !== this.state.fromCurrency) {
       this.props.updateFromCurrency(event.target.value);
     } else {
-      if (event.target.name === "to") {
+      if (event.target.name === "to" && event.target.value !== this.state.toCurrency) {
         this.props.updateToCurrency(event.target.value);
       }
     }
