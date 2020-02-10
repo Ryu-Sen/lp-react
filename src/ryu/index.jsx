@@ -7,8 +7,8 @@ class Currency extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toCurrency: "JPY",
-      fromCurrency: "PHP",
+      toCurrency: "PHP",
+      fromCurrency: "JPY",
       currencies: []
     };
   }
