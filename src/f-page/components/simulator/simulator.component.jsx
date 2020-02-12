@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {PieChart, LineChart} from '../chart/chart.component'
 import MortgageCalculator from "mortgage-calculator-react";
 import $ from "jquery";
 import simulatorStyles from "./simulator.styles.css"
+import {PieChart,BarChart} from "../chartjs/chartjs"
 
 class Simulator extends Component{
   constructor(){
@@ -13,7 +13,10 @@ class Simulator extends Component{
     }
   }
   getPieValues = ()=> {
-    let outputValues = []
+    let outputValues = {
+      labels:[],
+      data:[]
+    }
     let totalPayment = "";
     let loanAmount = ""; //maybe I need it somewhere else
 
@@ -33,7 +36,8 @@ class Simulator extends Component{
       let text = $(this).text().split(":$")
       
       if(text[0]!== "Loan Amount" && text[0]!== "Total Payment"){
-        outputValues.push({y:(Number.parseInt(text[1].replace(/,/g, ''))/totalPayment * 100).toFixed(2),label:text[0],x:index})
+        outputValues.labels.push(text[0])
+        outputValues.data.push((Number.parseInt(text[1].replace(/,/g, ''))/totalPayment * 100).toFixed(2))
       }
         
     })
@@ -41,24 +45,37 @@ class Simulator extends Component{
   }
   getLineValues = ()=> {
    
-    let values = []
+    let values = {
+      labels:[],
+      data:[]
+    }
     $('form :input').each(function(index) {
-      values.push({y: Number.parseFloat($(this).val()),label:this.name,x:index})
+      values.labels.push(this.name);
+      values.data.push(Number.parseInt($(this).val().replace(/,/g, '')))
     });
     return values
   }
 
   componentDidMount(){
+    $('form :input').change(()=>{
+      this.setState((state)=>{
+        state.pieDataPoints = this.getPieValues()
+        state.lineDataPoints = this.getLineValues()
+        return state
+      }) 
+    })
+  
+
     this.setState((state)=>{
       state.pieDataPoints = this.getPieValues()
       state.lineDataPoints = this.getLineValues()
       return state
-    },(console.log(this.state))) 
+    }) 
     
   }
   render(){
     return(
-      <div>
+      <div id="simulator-container">
          <section id="section" > </section>
           <div   className="content clearfix">
           <div className="container" style={{"paddingTop": "60px"}}>
@@ -74,13 +91,13 @@ class Simulator extends Component{
           </div>
           <div className="container" style={{height: "200vw"}}>
             <div>
-            <MortgageCalculator  id="simulator" style={simulatorStyles}/>
+            <MortgageCalculator  id="simulator" style={simulatorStyles} price={300000} downPayment={0}   insuranceRate={0.00}  />
             </div>
             <div style={{"float":"right"}}>
-            <PieChart pieOptions ={this.state.pieDataPoints} text = {"Payment Brakedown"}/>
-
+            <PieChart labels={this.state.pieDataPoints.labels} data={this.state.pieDataPoints.data}/>
+           
             <br></br>
-            <LineChart lineOptions = { this.state.lineDataPoints}  text = {"Statistics"}/>
+            <BarChart labels={this.state.lineDataPoints.labels} data={this.state.lineDataPoints.data}/>
 
             </div>
            
