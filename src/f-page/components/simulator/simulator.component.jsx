@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Chart from '../chart/chart.component'
+import {PieChart, LineChart} from '../chart/chart.component'
 import MortgageCalculator from "mortgage-calculator-react";
 import $ from "jquery";
 import simulatorStyles from "./simulator.styles.css"
@@ -7,48 +7,48 @@ import simulatorStyles from "./simulator.styles.css"
 class Simulator extends Component{
   constructor(){
     super()
-    this.state={
-			exportEnabled: true,
-			animationEnabled: true,
-			title: {
-				text: "Website Traffic Sources"
-			},
-			data: [{
-				type: "pie",
-				startAngle: 75,
-				toolTipContent: "<b>{label}</b>: {y}%",
-				showInLegend: "true",
-				legendText: "{label}",
-				indexLabelFontSize: 16,
-				indexLabel: "{label} - {y}%",
-				dataPoints: [
-					{ y: 18, label: "Direct" },
-					{ y: 49, label: "Organic Search" },
-					{ y: 9, label: "Paid Search" },
-					{ y: 5, label: "Referral" },
-					{ y: 19, label: "Social" }
-				]
-			}]
-		}
+    this.state= {
+      pieDataPoints:[],
+      lineDataPoint:[]
+    }
   }
   componentDidMount(){
     $('form :input').on('change',(e)=>{console.log(e.target)})
+
     let values = []
-     let $inputs = $('form :input')
-     
-     $inputs.each(function(e) {
+    $('form :input').each(function(index) {
       return values.push({y: 50,label:this.name})
   });
-   console.log(this.state)
-    this.setState({data:[{
-    type: "pie",
-    startAngle: 75,
-    toolTipContent: "<b>{label}</b>: {y}%",
-    showInLegend: "true",
-    legendText: "{label}",
-    indexLabelFontSize: 16,
-    indexLabel: "{label} - {y}%",
-    dataPoints:values}]},()=>{console.log(this.state)}) 
+
+  let outputValues = []
+  let totalPayment = "";
+  let loanAmount = ""; //maybe I need it somewhere else
+
+  $("._37q431tzwiJw837-Dlr_8F").children().each(function(){
+    let text = $(this).text().split(":$")
+    if(text[0] === "Total Payment"){
+     totalPayment =  Number.parseFloat(text[1].replace(/,/g, ''));
+    }
+    
+    if(text[0] === "Loan Amount"){
+      loanAmount =  Number.parseFloat(text[1].replace(/,/g, ''));
+    }
+  })
+
+  $("._37q431tzwiJw837-Dlr_8F").children().each(function(index){
+
+      let text = $(this).text().split(":$")
+      
+      if(text[0]!== "Loan Amount" && text[0]!== "Total Payment"){
+        outputValues.push({y:(Number.parseInt(text[1].replace(/,/g, ''))/totalPayment * 100).toFixed(2),label:text[0],x:index})
+      }
+      
+    })
+    
+    this.setState((state)=>{
+      state.pieDataPoints = outputValues
+      return state
+    },(console.log(this.state))) 
     
   }
   render(){
@@ -72,7 +72,8 @@ class Simulator extends Component{
             <MortgageCalculator  id="simulator" style={simulatorStyles}/>
             </div>
             <div style={{"float":"right"}}>
-            <Chart options={this.state}/>
+            <PieChart pieOptions={this.state.pieDataPoints}/>
+
             </div>
            
           </div>
