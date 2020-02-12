@@ -1,5 +1,6 @@
 import React from "react";
 import * as classNames from "classnames";
+import ScrollUpButton from "react-scroll-up-button";
 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -37,6 +38,7 @@ const Thomas = () => {
         </div>
       </div>
       <Footer />
+      <ScrollUpButton />
     </div>
   );
 };
