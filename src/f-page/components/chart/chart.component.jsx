@@ -3,12 +3,17 @@ import React from 'react'
 
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-export const  PieChart =({pieOptions})=>{
+export const  PieChart =({pieOptions, text})=>{
 const options = {
   exportEnabled: true,
   animationEnabled: true,
   title: {
-    text: "Payment Brakedown"
+    text: text
+  },
+  legend: {
+    horizontalAlign: "right", // "center" , "right"
+    verticalAlign: "center",  // "top" , "bottom"
+    fontSize: 15
   },
   data: [{
     type: "doughnut",
@@ -22,7 +27,7 @@ const options = {
   }]
 }
 return (
-  <div style={{"width":"500px"}}>
+  <div style={{"width":"600px"}}>
     <h1>Loan Simulation Chart</h1>
       <CanvasJSChart options = {options} 
       /* onRef={ref => this.chart = ref} */
@@ -32,7 +37,22 @@ return (
   );
 }
 
-export const LineChart = ({options})=>{
+export const LineChart = ({lineOptions, text})=>{
+  const options = {
+    animationEnabled: true,
+    theme: "light2", // "light1", "light2", "dark1", "dark2"
+    title:{
+      text: text
+    },
+    
+    data: [{        
+      type: "column",  
+      showInLegend: true, 
+      legendMarkerColor: "grey",
+      legendText: "Loan Simulator",
+      dataPoints:lineOptions
+    }]
+  }
   return (
     <div style={{"width":"500px"}}>
       <h1>Loan Simulation Chart</h1>
