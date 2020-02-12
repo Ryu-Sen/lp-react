@@ -1,4 +1,5 @@
 import React from "react";
+import * as classNames from "classnames";
 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -12,6 +13,9 @@ const Thomas = () => {
       <Header />
       <div className="content">
         <ListCarousel />
+        <div className={classNames("parallax", "city-height")}>
+          <div className="mask"></div>
+        </div>
         <div className="contact">
           <div style={{ padding: 20, fontSize: 20, fontWeight: "bold" }}>
             <p>+81 45 671 1195</p>
@@ -27,11 +31,6 @@ const Thomas = () => {
             className="map-img"
           />
         </div>
-        <img
-          src={require("../../assets/transition_image.jpg")}
-          alt="transition"
-          className="transition-img"
-        />
       </div>
       <Footer />
     </div>

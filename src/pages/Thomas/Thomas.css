@@ -1,7 +1,10 @@
 .Thomas {
-  position: relative;
   font-family: Helvetica;
   background: #f0f2f5;
+}
+
+.content {
+  background: url(../../assets/clouds.png) fixed bottom no-repeat;
 }
 
 .contact {
@@ -10,15 +13,75 @@
   justify-content: space-evenly;
   align-items: center;
   padding: 30px 0;
+  background: #f0f2f5;
 }
 
 .map-img {
+  position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 40%;
+  min-width: 20%;
 }
 
-.transition-img {
+@media screen and (min-width: 1680px) {
+  .city-height {
+    height: 950px;
+  }
+}
+
+@media screen and (max-width: 1679px) {
+  .city-height {
+    height: 800px;
+  }
+}
+
+@media screen and (max-width: 1379px) {
+  .city-height {
+    height: 560px;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .city-height {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 679px) {
+  .city-height {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .city-height {
+    height: 200px;
+  }
+}
+
+.parallax {
+  display: flex;
   width: 100%;
-  height: auto;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 10%, #f0f2f5 90%);
-  mask-image: linear-gradient(to bottom, transparent 10%, #f0f2f5 90%);
+  background: url("../../assets/transition_image.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+.mask {
+  display: flex;
+  mask: url("../../assets/clouds_back.png");
+  mask-size: cover;
+  -webkit-mask: url("../../assets/clouds_back.png");
+  -webkit-mask-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.clouds {
+  z-index: 50;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
