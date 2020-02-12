@@ -70,3 +70,28 @@
     "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;
   color: black;
 }
+
+.team-card {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f0f2f5;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .team-card-space {
+    padding: 20px 0;
+    border: 1px red;
+  }
+}
+
+.team-card-photo {
+  width: 80%;
+  height: auto;
+  margin-bottom: 10px;
+  clip-path: circle(50% at center);
+}

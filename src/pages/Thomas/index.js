@@ -2,10 +2,7 @@ import React from "react";
 import * as classNames from "classnames";
 import ScrollUpButton from "react-scroll-up-button";
 
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import ListCarousel from "../../components/ListCarousel";
-import Team from "../../components/Team";
+import { Header, Footer, ListCarousel, Team } from "../../components";
 
 import "./Thomas.css";
 
