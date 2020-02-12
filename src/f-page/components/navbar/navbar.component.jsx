@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
  
 const Header = ()=>{
   return(
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar fixed="top" bg="dark" variant="dark" expand="lg">
       <Navbar.Brand className="logo-brand" href="#home">
       <img
         alt=""
