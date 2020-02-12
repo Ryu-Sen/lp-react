@@ -1,9 +1,11 @@
 import React from "react";
 import * as classNames from "classnames";
+import ScrollUpButton from "react-scroll-up-button";
 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ListCarousel from "../../components/ListCarousel";
+import Team from "../../components/Team";
 
 import "./Thomas.css";
 
@@ -11,14 +13,12 @@ const Thomas = () => {
   return (
     <div className="Thomas">
       <Header />
-      {/* Change the classname because conflict with Florin's "content" class in his css,
-      making my whole content disappear */}
       <div className="main">
         <ListCarousel />
         <div className={classNames("parallax", "city-height")}>
           <div className="mask"></div>
         </div>
-        <div className="contact">
+        <div className={classNames("contact", "contact-position")}>
           <div style={{ padding: 20, fontSize: 20, fontWeight: "bold" }}>
             <p>+81 45 671 1195</p>
             <p>
@@ -30,11 +30,15 @@ const Thomas = () => {
           <img
             src={require("../../assets/map.png")}
             alt="map"
-            className="map-img"
+            className={classNames("map-img", "map-size")}
           />
+        </div>
+        <div className={classNames("team", "team-position")}>
+          <Team />
         </div>
       </div>
       <Footer />
+      <ScrollUpButton />
     </div>
   );
 };

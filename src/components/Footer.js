@@ -1,12 +1,13 @@
 import React from "react";
+import * as classNames from "classnames";
 
 import "./styles.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className={classNames("footer", "footer-position")}>
       {/* <div style={{ justifyContent: "center", alignItems: "center" }}> */}
-      <p className="footer-brand">
+      <p className={classNames("footer-brand", "footer-brand-size")}>
         Sotheby&#39;s International Realty® and the Sotheby&#39;s International
         Realty Logo are service marks licensed to Sotheby&#39;s International
         Realty Affiliates LLC and used with permission. List Sotheby&#39;s

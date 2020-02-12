@@ -5,7 +5,7 @@ import { Layout, Menu } from "antd";
 import About from "./About";
 import Home from "./Home";
 import Articles from "./Articles";
-import Currency from "../ryu"; // You don't need to specify "index" as React import automatically checks if there's an index and renders it if you don't specify any file component
+import Currency from "../ryu";
 import Article from "./Articles/Article";
 import Thomas from "./Thomas";
 import Florin from "../f-page";

@@ -16,11 +16,23 @@
   background: #f0f2f5;
 }
 
+@media screen and (max-width: 800px) {
+  .contact-position {
+    flex-direction: column;
+  }
+}
+
 .map-img {
   position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 40%;
   min-width: 20%;
+}
+
+@media screen and (max-width: 800px) {
+  .map-size {
+    width: 70%;
+  }
 }
 
 @media screen and (min-width: 1680px) {
@@ -84,4 +96,48 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.team {
+  display: flex;
+  width: 100%;
+  background: #37363d;
+  padding: 20px 0;
+  justify-content: center;
+}
+
+@media screen and (min-width: 501px) {
+  .team-position {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .team-position {
+    flex-direction: column;
+  }
+}
+
+.team-card {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f0f2f5;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  .team-card-space {
+    padding: 20px 0;
+    border: 1px red;
+  }
+}
+
+.team-card-photo {
+  width: 80%;
+  height: auto;
+  margin-bottom: 10px;
+  clip-path: circle(50% at center);
 }
