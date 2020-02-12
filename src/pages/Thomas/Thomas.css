@@ -55,7 +55,7 @@
 
 @media screen and (max-width: 979px) {
   .city-height {
-    height: 450px;
+    height: 380px;
   }
 }
 
@@ -67,7 +67,7 @@
 
 @media screen and (max-width: 500px) {
   .city-height {
-    height: 200px;
+    height: 180px;
   }
 }
 

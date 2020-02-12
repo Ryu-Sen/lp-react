@@ -11,7 +11,7 @@ export default [
   },
   {
     lastname: "SENDA",
-    firstname: "Ryuunosuke",
+    firstname: "Ryunosuke",
     photo: require("../assets/team/ryuu.png")
   }
 ];
