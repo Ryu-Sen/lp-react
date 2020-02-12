@@ -11,7 +11,9 @@ const Thomas = () => {
   return (
     <div className="Thomas">
       <Header />
-      <div className="content">
+      {/* Change the classname because conflict with Florin's "content" class in his css,
+      making my whole content disappear */}
+      <div className="main">
         <ListCarousel />
         <div className={classNames("parallax", "city-height")}>
           <div className="mask"></div>
