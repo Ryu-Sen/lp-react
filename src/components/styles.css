@@ -21,25 +21,77 @@
   bottom: 0;
   align-items: center;
   padding: 0 50px;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .footer-brand {
   text-align: justify;
   color: #fff;
-  font-size: 12px;
-  width: 400px;
+  font-size: 13px;
+  width: 60%;
+  min-width: 300px;
   height: auto;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .footer-brand-size {
+    font-size: 10px;
+  }
 }
 
 .footer-logo {
   display: flex;
-  justify-self: flex-end;
+}
+
+@media screen and (max-width: 500px) {
+  .footer-position {
+    flex-direction: column;
+    padding: 10px;
+  }
 }
 
 .carousel {
   flex: 1;
   text-align: center;
-  background: #364d79;
   position: relative;
+  -webkit-mask-image: linear-gradient(to top, transparent 1%, #f0f2f5 20%);
+  mask-image: linear-gradient(to top, transparent 1%, #f0f2f5 20%);
+}
+
+.carousel-text {
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
+    メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック",
+    "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;
+  color: black;
+}
+
+.team-card {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f0f2f5;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .team-card-space {
+    padding: 20px 0;
+    border: 1px red;
+  }
+}
+
+.team-card-photo {
+  width: 80%;
+  height: auto;
+  margin-bottom: 10px;
+  clip-path: circle(50% at center);
 }
