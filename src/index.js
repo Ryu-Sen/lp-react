@@ -1,14 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import App from "./pages/App";
 import * as serviceWorker from "./serviceWorker";
 import { Layout } from "./components";
+import AOS from "aos";
 
 import "./index.css";
 import "antd/dist/antd.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 ReactDOM.render(
   <Router>
