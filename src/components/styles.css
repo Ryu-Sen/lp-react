@@ -1,18 +1,10 @@
-.header {
-  width: 100%;
-  height: auto;
-  display: flex;
-  background-color: rgb(78, 72, 63);
-  padding: 0 50px;
-}
-
 .header-logo {
   display: flex;
   height: 100px;
 }
 
 .footer {
-  background-color: rgb(78, 72, 63);
+  background-color: #001529;
   display: flex;
   flex-shrink: 0;
   width: 100%;
@@ -69,6 +61,34 @@
     メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック",
     "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;
   color: black;
+}
+
+.contact {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 0;
+  background: #f0f2f5;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-position {
+    flex-direction: column;
+  }
+}
+
+.map-img {
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 40%;
+  min-width: 20%;
+}
+
+@media screen and (max-width: 800px) {
+  .map-size {
+    width: 70%;
+  }
 }
 
 .team-card {
