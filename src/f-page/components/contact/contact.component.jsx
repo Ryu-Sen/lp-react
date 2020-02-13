@@ -13,18 +13,19 @@ class ContactForm extends Component {
 handleSubmit(e) {
     e.preventDefault()
     const { name, email, subject, message } = this.state
+
     let templateParams = {
       from_name: email,
-      to_name: '<YOUR_EMAIL_ID>',
+      to_name: 'Florin Ionut',  
       subject: subject,
       message_html: message,
      }
-     emailjs.send(
-      'gmail',
-      'template_XXXXXXXX',
-       templateParams,
-      'user_XXXXXXXXXXXXXXXXXXXX'
-     )
+     try {
+      emailjs.send('gmail', 'list_template',templateParams,'user_OnGgSdq6Zzde4sLZ4Pyku')
+     } catch (error) {
+       console.log(error)
+     }
+    
      this.resetForm()
  }
 resetForm() {
