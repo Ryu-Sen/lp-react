@@ -43,7 +43,7 @@ class Simulator extends Component{
       labels:[],
       data:[]
     }
-    $('form :input').each(function(index) {
+    $('#simulator-container :input').each(function(index) {
       values.labels.push(this.name);
       values.data.push(Number.parseInt($(this).val().replace(/,/g, '')))
     });
@@ -71,33 +71,24 @@ class Simulator extends Component{
     return(
       <div id="simulator-container">
          <section id="section" > </section>
-          <div   className="content clearfix">
-          <div className="container" style={{"paddingTop": "60px"}}>
-            <div className="row">
-              <div className="col-md-5">
-                <h2 className="text-uppercase">Tomato Ramen</h2>
-                <p className="font-alt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptatibus molestia!</p>
+            <div  style={{"paddingTop": "60px"}}>
+              <div className="row">
+                <div className="col-md-5">
+                  <h2 className="text-uppercase">Tomato Ramen</h2>
+                  <p className="font-alt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptatibus molestia!</p>
+                </div>
+                <div className="col-md-7">
+                  <p style={{"paddingTop":" 47px"}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam earum eos corporis totam vel, eaque sapiente officiis sint culpa inventore blanditiis hic cupiditate illo nam assumenda reprehenderit suscipit dolorum.</p>			
+                </div>
+              </div>	
+              <div>
+                <MortgageCalculator  id="simulator" style={simulatorStyles} price={300000} downPayment={0}   insuranceRate={0.00}  />
               </div>
-              <div className="col-md-7">
-                <p style={{"paddingTop":" 47px"}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam earum eos corporis totam vel, eaque sapiente officiis sint culpa inventore blanditiis hic cupiditate illo nam assumenda reprehenderit suscipit dolorum.</p>			
+              <div style={{"float":"right"}}>
+                <PieChart labels={this.state.pieDataPoints.labels} data={this.state.pieDataPoints.data}/>
+                <BarChart labels={this.state.lineDataPoints.labels} data={this.state.lineDataPoints.data}/>
               </div>
-            </div>	
-          </div>
-          <div className="container" style={{height: "200vw"}}>
-            <div>
-            <MortgageCalculator  id="simulator" style={simulatorStyles} price={300000} downPayment={0}   insuranceRate={0.00}  />
-            </div>
-            <div style={{"float":"right"}}>
-            <PieChart labels={this.state.pieDataPoints.labels} data={this.state.pieDataPoints.data}/>
-           
-            <br></br>
-            <BarChart labels={this.state.lineDataPoints.labels} data={this.state.lineDataPoints.data}/>
-
-            </div>
-           
-          </div>
-         
-        </div>
+          </div> 
       </div>
     )
   }

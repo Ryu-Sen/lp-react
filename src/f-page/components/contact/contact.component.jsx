@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import * as emailjs from 'emailjs-com'
-import Layout from '../components/layout'
 import { Button, FormFeedback, Form, FormGroup, Label, Input } from 'reactstrap'
+
+
 class ContactForm extends Component {
   state = {
     name: '',
@@ -39,11 +40,10 @@ handleChange = (param, e) => {
   }
 render() {
     return (
-      <>
-        <Layout>
+      <div style={{"width":"500px","float":"right"}}>
           <h1 className="p-heading1">Get in Touch</h1>
           <Form onSubmit={this.handleSubmit.bind(this)}>
-            <FormGroup controlId="formBasicEmail">
+            <FormGroup id="formBasicEmail">
               <Label className="text-muted">Email address</Label>
               <Input
                 type="email"
@@ -54,7 +54,7 @@ render() {
                 placeholder="Enter email"
               />
             </FormGroup>
-<FormGroup controlId="formBasicName">
+            <FormGroup id="formBasicName">
               <Label className="text-muted">Name</Label>
               <Input
                 type="text"
@@ -65,7 +65,7 @@ render() {
                 placeholder="Name"
               />
             </FormGroup>
-<FormGroup controlId="formBasicSubject">
+            <FormGroup id="formBasicSubject">
               <Label className="text-muted">Subject</Label>
               <Input
                 type="text"
@@ -76,7 +76,7 @@ render() {
                 placeholder="Subject"
               />
             </FormGroup>
-<FormGroup controlId="formBasicMessage">
+            <FormGroup id="formBasicMessage">
               <Label className="text-muted">Message</Label>
               <Input
                 type="textarea"
@@ -86,12 +86,11 @@ render() {
                 onChange={this.handleChange.bind(this, 'message')}
               />
             </FormGroup>
-<Button variant="primary" type="submit">
+            <Button variant="primary" type="submit">
               Submit
             </Button>
           </Form>
-        </Layout>
-      </>
+          </div>
     )
   }
 }
