@@ -14,7 +14,7 @@ const Thomas = () => {
         <title>Thomas LP</title>
         <meta
           name="description"
-          content="This is the Thomas' LP, enjoy beautiful React single page website."
+          content="This is the Thomas' LP, enjoy beautiful React page website."
         />
         <meta
           property="og:image"
