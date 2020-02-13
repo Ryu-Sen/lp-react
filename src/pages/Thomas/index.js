@@ -1,6 +1,7 @@
 import React from "react";
 import * as classNames from "classnames";
 import ScrollUpButton from "react-scroll-up-button";
+import MetaTags from "react-meta-tags";
 
 import { Header, Footer, ListCarousel, Team } from "../../components";
 
@@ -9,6 +10,17 @@ import "./Thomas.css";
 const Thomas = () => {
   return (
     <div className="Thomas">
+      <MetaTags>
+        <meta
+          name="description"
+          content="This is the Thomas' LP, enjoy beautiful React single page website."
+        />
+        <meta
+          property="og:image"
+          content={require("../../assets/transition_image.jpg")}
+        />
+        <meta property="og:title" content="Thomas' LP" />
+      </MetaTags>
       <Header />
       <div className="main">
         <ListCarousel />
