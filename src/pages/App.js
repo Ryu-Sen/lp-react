@@ -13,7 +13,7 @@ import NotFound from "./NotFound";
 
 import "./App.css";
 
-const { Header, Content } = Layout;
+const { Header, Content } = Layout; // this Layout is from antd, not Helmet
 
 class App extends React.PureComponent {
   disableHeader = () =>
@@ -93,7 +93,7 @@ class App extends React.PureComponent {
             </Route>
 
             {/* If none of the previous routes render anything,
-              this route acts as a fallback.*/}
+              this route acts as a fallback. */}
             <Route path="*">
               <NotFound />
             </Route>
