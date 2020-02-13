@@ -18,16 +18,10 @@ class Simulator extends Component{
       data:[]
     }
     let totalPayment = "";
-    let loanAmount = ""; //maybe I need it somewhere else
-
     $("._37q431tzwiJw837-Dlr_8F").children().each(function(){
       let text = $(this).text().split(":$")
       if(text[0] === "Total Payment"){
       totalPayment =  Number.parseFloat(text[1].replace(/,/g, ''));
-      }
-    
-      if(text[0] === "Loan Amount"){
-        loanAmount =  Number.parseFloat(text[1].replace(/,/g, ''));
       }
     })
 
