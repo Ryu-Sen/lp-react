@@ -49,6 +49,7 @@ const Team = () => {
       )}
       {team.map(mate => (
         <div
+          data-aos="fade-up"
           onClick={() => setMember(mate)}
           className={classNames("team-card", "team-card-space")}
         >
