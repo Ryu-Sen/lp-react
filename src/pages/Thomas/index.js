@@ -1,7 +1,7 @@
 import React from "react";
 import * as classNames from "classnames";
 import ScrollUpButton from "react-scroll-up-button";
-import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet";
 
 import { Header, Footer, ListCarousel, Team } from "../../components";
 
@@ -10,7 +10,8 @@ import "./Thomas.css";
 const Thomas = () => {
   return (
     <div className="Thomas">
-      <MetaTags>
+      <Helmet>
+        <title>Thomas LP</title>
         <meta
           name="description"
           content="This is the Thomas' LP, enjoy beautiful React single page website."
@@ -20,7 +21,7 @@ const Thomas = () => {
           content={require("../../assets/transition_image.jpg")}
         />
         <meta property="og:title" content="Thomas' LP" />
-      </MetaTags>
+      </Helmet>
       <Header />
       <div className="main">
         <ListCarousel />
