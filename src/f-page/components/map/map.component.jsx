@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import "./map.styles.css"
 
 const locations = [
   {location:{lat: 21.2770975, lng: -157.7885631},name:"Hawai Office"},
@@ -9,12 +10,13 @@ const locations = [
   {location:{lat: 22.2830693, lng: 114.154953},name:"Hong Kong Office"},
   {location:{lat: 13.7460168, lng: 100.5386818},name:"Thailand Office"},
 ]
+
  class MapContainer extends Component {
    
   render() {
     return (
       <div>
-        <Map  containerStyle={{"width":"500px","height":"500px"}} google={this.props.google} zoom={3}  initialCenter={{
+        <Map className="map" containerStyle={{ "position":"relative"}} google={this.props.google} zoom={3}  initialCenter={{
             lat: 35.6466522,
             lng: 139.7465246
           }}>
