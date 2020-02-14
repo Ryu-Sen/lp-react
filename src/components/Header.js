@@ -1,10 +1,21 @@
 import React from "react";
+import { Layout } from "antd";
 
 import "./styles.css";
 
-const Header = () => {
+const { Header } = Layout;
+
+const styles = {
+  width: "100%",
+  height: "auto",
+  display: "flex",
+  paddingLeft: 50,
+  paddingRight: 50
+};
+
+const CustomHeader = () => {
   return (
-    <header className="header">
+    <Header style={{ ...styles }}>
       <a href="/">
         <img
           src={require("../assets/logo.png")}
@@ -13,8 +24,8 @@ const Header = () => {
           className="header-logo"
         />
       </a>
-    </header>
+    </Header>
   );
 };
 
-export default Header;
+export default CustomHeader;
