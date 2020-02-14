@@ -49,43 +49,39 @@ export const  PieChart = ({labels,data}) => {
 export const BarChart = ({labels, data}) =>{
   const barData = {
     labels: labels,
-    datasets: [
-      {
-        
-        label: "Payment DataSet"  ,
-        backgroundColor: [
-          '#B21F00',
-          '#C9DE00',
-          '#2FDE00',
-          '#00A6B4',
-          '#6800B4'
-        ],
-        hoverBackgroundColor: [
-        '#501800',
-        '#4B5000',
-        '#175000',
-        '#003350',
-        '#35014F'
-        ],
-        data:data
-      }
-    ]
-  }
+    datasets: [{
+      label: "Payment Brakedown",
+      backgroundColor: "rgba(255,99,132,0.2)",
+      borderColor: "rgba(255,99,132,1)",
+      borderWidth: 2,
+      hoverBackgroundColor: "rgba(255,99,132,0.4)",
+      hoverBorderColor: "rgba(255,99,132,1)",
+      data:data,
+    }]
+  };
+  const  options = {
+    responsive: true,
+    scales: {
+      yAxes: [{
+        stacked: true,
+        gridLines: {
+          display: true,
+          color: "rgba(255,99,132,0.2)"
+        }
+      }],
+      xAxes: [{
+        gridLines: {
+          display: false
+        }
+      }]
+    }
+  };
+  
   return(
-    <div  style={{"width":"600px"}}>
+    <div  style={{"width":"inherith"}}>
         <Bar
           data={barData}
-          options={{
-            title:{
-              display:true,
-              text:'Payment Brakedown',
-              fontSize:20
-            },
-            legend:{
-              display:true,
-              position:'right'
-            }
-          }}
+          options={options}
         />
       </div>
   )
