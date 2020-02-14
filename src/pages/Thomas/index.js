@@ -8,7 +8,8 @@ import {
   ListCarousel,
   Team,
   Layout,
-  Contact
+  Contact,
+  Event
 } from "../../components";
 
 import "./Thomas.css";
@@ -27,10 +28,11 @@ const Thomas = () => {
           <div className={classNames("parallax", "city-height")}>
             <div className="mask"></div>
           </div>
-          <Contact name="contact" />
-          <div name="team" className={classNames("team", "team-position")}>
+          <Contact />
+          <div className={classNames("team", "team-position")}>
             <Team />
           </div>
+          <Event />
         </div>
         <Footer />
         <ScrollUpButton />
