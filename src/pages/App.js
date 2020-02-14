@@ -24,7 +24,8 @@ class App extends React.PureComponent {
 
   render() {
     return (
-      <Layout style={{ minHeight: "100vh" }}>
+      // <Layout style={{ minHeight: "100vh" }}>
+      <>
         {this.disableHeader() && (
           <Header style={{ background: "#fff", padding: 0 }}>
             <Menu
@@ -56,7 +57,6 @@ class App extends React.PureComponent {
             </Menu>
           </Header>
         )}
-
         <Content className="App">
           <Switch>
             {/* If the current URL is /about, this route is rendered
@@ -99,7 +99,8 @@ class App extends React.PureComponent {
             </Route>
           </Switch>
         </Content>
-      </Layout>
+      </>
+      // </Layout>
     );
   }
 }
