@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import * as emailjs from 'emailjs-com'
 import { Button, FormFeedback, Form, FormGroup, Label, Input } from 'reactstrap'
+import "./contact.styles.css"
 
 
 class ContactForm extends Component {
@@ -41,7 +42,7 @@ handleChange = (param, e) => {
   }
 render() {
     return (
-      <div style={{"width":"500px","float":"right"}}>
+      <div className="contact-container">
           <h1 className="p-heading1">Get in Touch</h1>
           <Form onSubmit={this.handleSubmit.bind(this)}>
             <FormGroup id="formBasicEmail">
