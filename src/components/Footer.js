@@ -6,7 +6,6 @@ import "./styles.css";
 const Footer = () => {
   return (
     <footer className={classNames("footer", "footer-position")}>
-      {/* <div style={{ justifyContent: "center", alignItems: "center" }}> */}
       <p className={classNames("footer-brand", "footer-brand-size")}>
         Sotheby&#39;s International Realty® and the Sotheby&#39;s International
         Realty Logo are service marks licensed to Sotheby&#39;s International
@@ -20,15 +19,12 @@ const Footer = () => {
         broker, please disregard. It is not our intention to solicit the
         offerings of other real estate brokers.
       </p>
-      {/* </div> */}
-      {/* <div style={{ justifyContent: "center", alignItems: "center" }}> */}
       <img
         src={require("../assets/logo.png")}
         alt="logo"
         title="logo"
         className="footer-logo"
       />
-      {/* </div> */}
     </footer>
   );
 };

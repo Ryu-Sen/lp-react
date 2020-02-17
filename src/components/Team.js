@@ -47,9 +47,11 @@ const Team = () => {
           <p style={{ textAlign: "justify" }}>{member.description}</p>
         </Modal>
       )}
-      {team.map(mate => (
+      {team.map((mate, index) => (
         <div
+          key={index}
           data-aos="fade-up"
+          data-aos-duration="1100"
           onClick={() => setMember(mate)}
           className={classNames("team-card", "team-card-space")}
         >
