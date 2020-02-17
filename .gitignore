@@ -9,7 +9,8 @@
 /coverage
 
 # production
-# /build
+/build
+post.js
 
 # misc
 .DS_Store
