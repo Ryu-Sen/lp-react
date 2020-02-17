@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
+import Carousel from '@brainhubeu/react-carousel';
 
 import offices from "./officeImages"
 import '@brainhubeu/react-carousel/lib/style.css';
@@ -28,7 +28,7 @@ class MyCarousel extends React.Component {
         value={this.state.value}
         onChange={this.onChange}
         slides={offices.map(office=>
-         <img style={{"margin-bottom":"100px"}} src={office.src} alt={office.title}  height="200" width="200"/>
+         <img style={{"marginBottom":"100px"}} src={office.src} alt={office.title}  height="200" width="200"/>
          )}
   
         clickToChange
