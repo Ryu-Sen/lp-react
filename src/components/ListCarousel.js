@@ -7,8 +7,6 @@ const images = ["image_one", "image_two", "image_three", "image_four"];
 
 const ListCarousel = () => {
   return (
-    // <>
-    /* <span className="carousel-text">斗魔</span> */
     <Carousel dotPosition="top" autoplay arrows className="carousel">
       {images.map((image, i) => (
         <img
@@ -20,7 +18,6 @@ const ListCarousel = () => {
         />
       ))}
     </Carousel>
-    // </>
   );
 };
 

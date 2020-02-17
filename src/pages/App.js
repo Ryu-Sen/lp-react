@@ -24,7 +24,6 @@ class App extends React.PureComponent {
 
   render() {
     return (
-      // <Layout style={{ minHeight: "100vh" }}>
       <>
         {this.disableHeader() && (
           <Header style={{ background: "#fff", padding: 0 }}>
@@ -100,7 +99,6 @@ class App extends React.PureComponent {
           </Switch>
         </Content>
       </>
-      // </Layout>
     );
   }
 }
