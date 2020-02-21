@@ -17,7 +17,7 @@ const Header = ()=>{
       />{' '}
       LSIR Landing Page
     </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Toggle className="hamburger" aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="nav-container">
           <Nav.Link href="#home">Home</Nav.Link>

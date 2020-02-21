@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6{
 	transform: translate3d(0, 0, 0) scale(1);	
 	opacity: 0.98;
 	position: relative;
-	height: 110vw;
+	height: 140vw;
 }
 .sd{
 	color: black;
@@ -79,4 +79,16 @@ h1, h2, h3, h4, h5, h6{
 	color: #fff;
 	opacity: .7;
 	text-decoration: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+	
+	
+	.content.scrolled{
+		transform: translate3d(0, 0, 0) scale(1);
+			opacity: 0.98;
+			position: relative;
+			height: auto;
+	}
 }

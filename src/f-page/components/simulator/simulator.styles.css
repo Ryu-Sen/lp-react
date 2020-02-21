@@ -113,3 +113,40 @@ div._2rRxbhZfd2m69aGyclMHup > form > div.FhD6sRmOe8tMY0xW6D0KO > div{
 	margin-top: 100px;
 	height: 73vw;
 }
+.chart-container {
+	float: right;
+  position: relative;
+  margin: auto;
+  width:500px;
+  
+}
+
+@media only screen and (max-width: 600px) {
+	div._2rRxbhZfd2m69aGyclMHup{
+		position: relative;
+		height: auto;
+    width: auto;
+	}
+
+	#simulator-container{
+		margin-top: 0px;
+		height: auto;
+	}
+	.chart-container{
+		float: none;
+		width:400px;
+	
+	}
+	
+}
+@media only screen and (max-width: 400px) {
+	
+	._3gGF3MGRKxzQZh6RczOEoz.ggtReN8zzGuVkr5-qrqOl{
+		margin-left: 0;
+	}
+	.chart-container{
+		width:300px;
+	
+	}
+	
+}

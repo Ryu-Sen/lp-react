@@ -80,14 +80,17 @@ class Simulator extends Component{
                 <div className="col-md-7">
                   <p style={{"paddingTop":" 47px"}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam earum eos corporis totam vel, eaque sapiente officiis sint culpa inventore blanditiis hic cupiditate illo nam assumenda reprehenderit suscipit dolorum.</p>			
                 </div>
-              </div>	
+              </div>
               <div>
-                <MortgageCalculator  id="simulator" style={simulatorStyles} price={300000} downPayment={0}   insuranceRate={0.00}  />
-              </div>
-              <div style={{"float":"right"}}>
-                <PieChart labels={this.state.pieDataPoints.labels} data={this.state.pieDataPoints.data}/>
-                <BarChart labels={this.state.lineDataPoints.labels} data={this.state.lineDataPoints.data}/>
-              </div>
+                <div>
+                  <MortgageCalculator  id="simulator" style={simulatorStyles} price={300000} downPayment={0}   insuranceRate={0.00}  />
+                </div>
+                <div className="chart-container">
+                  <PieChart labels={this.state.pieDataPoints.labels} data={this.state.pieDataPoints.data}/>
+                  <BarChart labels={this.state.lineDataPoints.labels} data={this.state.lineDataPoints.data}/>
+                </div>
+              </div>	
+            
           </div> 
       </div>
     )

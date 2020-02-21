@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import * as emailjs from 'emailjs-com'
 import { Button, FormFeedback, Form, FormGroup, Label, Input } from 'reactstrap'
+import {ValidatingFormGroup} from "reactstrap-validation";
+import "./contact.styles.css"
 
 
 class ContactForm extends Component {
@@ -40,13 +42,16 @@ handleChange = (param, e) => {
     this.setState({ [param]: e.target.value })
   }
 render() {
+ 
     return (
-      <div style={{"width":"500px","float":"right"}}>
+      <div className="contact-container">
           <h1 className="p-heading1">Get in Touch</h1>
           <Form onSubmit={this.handleSubmit.bind(this)}>
-            <FormGroup id="formBasicEmail">
+            <ValidatingFormGroup id="formBasicEmail" trigger="change"  onStateChange={console.log}>
               <Label className="text-muted">Email address</Label>
+            
               <Input
+                required
                 type="email"
                 name="email"
                 value={this.state.email}
@@ -54,10 +59,11 @@ render() {
                 onChange={this.handleChange.bind(this, 'email')}
                 placeholder="Enter email"
               />
-            </FormGroup>
-            <FormGroup id="formBasicName">
+            </ValidatingFormGroup>
+            <ValidatingFormGroup id="formBasicName">
               <Label className="text-muted">Name</Label>
               <Input
+                required
                 type="text"
                 name="name"
                 value={this.state.name}
@@ -65,10 +71,11 @@ render() {
                 onChange={this.handleChange.bind(this, 'name')}
                 placeholder="Name"
               />
-            </FormGroup>
-            <FormGroup id="formBasicSubject">
+            </ValidatingFormGroup>
+            <ValidatingFormGroup id="formBasicSubject">
               <Label className="text-muted">Subject</Label>
               <Input
+                required
                 type="text"
                 name="subject"
                 className="text-primary"
@@ -76,17 +83,18 @@ render() {
                 onChange={this.handleChange.bind(this, 'subject')}
                 placeholder="Subject"
               />
-            </FormGroup>
-            <FormGroup id="formBasicMessage">
+            </ValidatingFormGroup>
+            <ValidatingFormGroup id="formBasicMessage">
               <Label className="text-muted">Message</Label>
               <Input
+                required
                 type="textarea"
                 name="message"
                 className="text-primary"
                 value={this.state.message}
                 onChange={this.handleChange.bind(this, 'message')}
               />
-            </FormGroup>
+            </ValidatingFormGroup>
             <Button variant="primary" type="submit">
               Submit
             </Button>
